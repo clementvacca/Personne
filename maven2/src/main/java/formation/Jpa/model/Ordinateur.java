@@ -10,24 +10,24 @@ import javax.persistence.Table;
 public class Ordinateur {
 	@Id
 	@Column(name = "code", length = 150, nullable = true)
-	private Integer code;
+	private String code;
 	@Column(name = "ram", length = 150, nullable = true)
 	private Integer ram;
 	
 	public Ordinateur() {
-		
 	}
-	public Ordinateur(Integer code,Integer ram) {
+	public Ordinateur(String code,Integer ram) {
+		super();
 		this.code=code;
 		this.ram=ram;
 		
 	}
 	
-	public Integer getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 

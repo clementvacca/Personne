@@ -20,7 +20,7 @@ public class DaoOrdinateurJpaImpl implements DaoOrdinateur {
 		return ordinateurs;
 	}
 
-	public Ordinateur findByKey(Integer key) {
+	public Ordinateur findByKey(String key) {
 		EntityManager em = Context.getEntityManagerFactory().createEntityManager();
 		Ordinateur o = null;
 		o = em.find(Ordinateur.class, key);
@@ -78,7 +78,7 @@ public class DaoOrdinateurJpaImpl implements DaoOrdinateur {
 		em.close();
 	}
 
-	public void deleteByKey(Integer key) {
+	public void deleteByKey(String key) {
 		EntityManager em = Context.getEntityManagerFactory().createEntityManager();
 		EntityTransaction tx = null;
 		try {

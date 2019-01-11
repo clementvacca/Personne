@@ -13,10 +13,10 @@ import javax.persistence.Table;
 @SequenceGenerator(name="seqCompetence", sequenceName="seq_competence", allocationSize=1,initialValue=100)
 public class Competence {
 	@Id
-	@Column(name = "id", length = 150, nullable = true)
+	@Column(name = "id_skill", length = 150, nullable = true)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqCompetence")
 	private Integer id;
-	@Column(name = "nom", length = 150, nullable = true)
+	@Column(name = "name_skill", length = 150, nullable = true)
 	private String nom;
 	
 	public Competence() {
