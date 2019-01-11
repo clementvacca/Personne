@@ -1,10 +1,13 @@
 package resources;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-
+import formation.Jpa.model.Competence;
+import formation.Jpa.model.Ordinateur;
 import formation.Jpa.model.Personne;
 import formation.Jpa.util.Context;
+import formationJpa.dao.Competence.DaoCompetence;
+import formationJpa.dao.Competence.DaoCompetenceFactory;
+import formationJpa.dao.Ordinateur.DaoOrdinateur;
+import formationJpa.dao.Ordinateur.DaoOrdinateurFactory;
 import formationJpa.dao.Personne.DaoPersonne;
 import formationJpa.dao.Personne.DaoPersonneFactory;
 
@@ -17,24 +20,19 @@ public class AppTest {
 		daoPersonne.insert(clement);
 		
 		Personne recherche= daoPersonne.findByKey(100);
-		System.out.println();
+		System.out.println(recherche);
+		
+		DaoOrdinateur daoOrdinateur=DaoOrdinateurFactory.getInstance();
+		Ordinateur ordi=new Ordinateur(368,16);
+		daoOrdinateur.insert(ordi);
+		
+		DaoCompetence daoCompetence=DaoCompetenceFactory.getInstance();
+		Competence comp=new Competence("JAVA");
+		daoCompetence.insert(comp);
+		
+		
+		
 		Context.close();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 //		System.out.println("ok");
 //		Personne clement = new Personne("clement", "vacca");
