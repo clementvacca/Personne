@@ -1,0 +1,11 @@
+package formationJpa.dao.Personne;
+
+public class DaoPersonneFactory {
+	private static DaoPersonne singleton=null;
+	public static DaoPersonne getInstance() {
+		if(singleton==null) {
+			singleton=new DaoPersonneJpaImpl();
+		}
+		return singleton;
+	}
+}
